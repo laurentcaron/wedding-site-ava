@@ -94,11 +94,11 @@ export class AppComponent implements OnInit, OnDestroy {
   }
 
   public addToCalendar() {
-    const start = new Date(2025, 7, 5)
-    const end = new Date(2025, 7, 6)
+    const start = new Date(2027, 5, 27)
+    const end = new Date(2027, 5, 28)
     const final_date = this.format_date(start) + "/" + this.format_date(end);
-    const name = "Mariage Florence et Simon";
-    const description = `Joignez-vous à nous pour notre mariage. %0A%0ALa cérémonie débute à 15:30 %0ALa Toundra https://maps.app.goo.gl/eCte9Lsek3yyQZfy7 %0A1 Circuit Gilles Villeneuve, Montreal, QC, Canada`;
+    const name = "Mariage Ava et Roman";
+    const description = `Joignez-vous à nous pour notre mariage. %0A%0ALa cérémonie débute à 16:30 %0ALa Toundra https://maps.app.goo.gl/eCte9Lsek3yyQZfy7 %0A1 Circuit Gilles Villeneuve, Montreal, QC, Canada`;
     const loc = '1 Circuit Gilles Villeneuve, Montréal, QC H3C 1A9';
     const href = "https://www.google.com/calendar/render?action=TEMPLATE&text="+ name +"&dates="+ final_date +"&details="+ description +"&location="+ loc +"&sf=true&output=xml";
     window.open(href,'_blank');

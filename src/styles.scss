@@ -9,12 +9,24 @@
     src: url('assets/fonts/PlayfairDisplay-VariableFont_wght.ttf') format('opentype');
 }
 
+:root {
+    --gold: #c9a961;
+    --gold-deep: #a8894a;
+    --white: #ffffff;
+    --off-white: #faf7f2;
+    --ink: #3a2e1f;
+}
+
 html, body {
     overflow-x: hidden;
 }
 
 body {
-    font-family: 'Playfair', Fallback, sans-serif !important;
+    font-family: 'Cormorant Garamond', 'Playfair', serif;
     margin-top: 0;
     margin: 0;
+    background: var(--off-white);
+    color: var(--ink);
+    font-weight: 300;
+    letter-spacing: 0.01em;
 }
