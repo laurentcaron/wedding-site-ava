@@ -1,0 +1,159 @@
+
+<!-- Toolbar -->
+<!-- <div class="toolbar" role="banner">
+
+</div> -->
+
+<div class="content" role="main">
+  <div class="container">
+    <!-- <div class="section names">
+      <img [src]="lang === 'fr' ? '/assets/images/logo_fr.png' : '/assets/images/logo.jpg'">
+    </div> -->
+    <div class="section photo photo-1"></div>
+
+    <div class="section salute">
+      <h1>
+        Bonjour
+        <ng-container *ngFor="let guest of guestList; let i = index">
+          {{ guest.first }}<ng-container *ngIf="i + 1 < guestList.length - 1">,</ng-container> 
+          <ng-container *ngIf="i + 1 === guestList.length - 1"> &</ng-container>
+        </ng-container>
+      </h1>
+
+      <h2 class="join-us">
+        Joignez-vous à nous pour notre mariage le 5 juillet 2025
+      </h2>
+    </div>
+
+    <div class="section info">
+      <h3>Vous êtes attendus à 16h00, et la cérémonie débutera à 16h30.</h3>
+
+      <a href="https://maps.app.goo.gl/eCte9Lsek3yyQZfy7" target="_blank" class="link">
+        La Toundra
+      </a>
+
+      <h3>
+        1 Circuit Gilles Villeneuve, Montreal, QC, Canada
+      </h3>
+
+      <button class="calendar-button" (click)="addToCalendar()">
+        Ajouter au calendrier
+      </button>
+    </div>
+
+    <div class="section info-sec">
+      <h2>
+        Formule
+      </h2>
+      <h3>
+        Le souper sera servi tel un menu « dégustation », en 4 services, avec un accord mets et vins. Vous n'avez donc aucun choix de repas à fournir. Nous sommes toutefois en mesure d'accommoder les allergies et restrictions alimentaires au besoin, et nous vous invitons à le mentionner ci-dessous (ex : végétarien, intolérance viande rouge).
+      </h3>
+
+      <div class="divider"></div>
+
+      <h2>
+        Code vestimentaire
+      </h2>
+      <h3>
+        Tenue de soirée
+      </h3>
+
+      <div class="divider"></div>
+
+      <h2>
+        Cadeaux
+      </h2>
+      <!-- 'Le cadeau le plus important pour nous est de vous avoir parmi nous pour notre journée spéciale. Si vous souhaitez nous faire l\'honneur d\'un cadeau, un puits à souhaits sera disponible le jour même.' : -->
+      <!-- 'The most important gift to us is to have you share our special day. Should you wish to honour us with a gift, a wishing well will be available on the day.' -->
+      <!-- There\'s no greater gift than your presence. Thank you for your support and love over the time we\'ve known each other. -->
+      <h3 class="big-margin">
+        Votre support et présence à notre mariage sont les plus beaux des cadeaux. Si vous tenez à nous offrir quelque chose de plus, une contribution monétaire serait chaleureusement appréciée! Vous pouvez envoyer celle-ci par courriel à l'adresse suivante:
+      </h3>
+      <h3>
+        mariageflorencesimon@gmail.com
+      </h3>
+      <h3>
+        Une boîte pour les cartes sera également disponible le jour même.
+      </h3>
+    </div>
+
+    <div class="section photo photo-2"></div>
+
+    <div class="section respond">
+      <h2>Veuillez confirmer votre présence</h2>
+      <h3>avant le 26 mars 2025</h3>
+    </div>
+  
+    <form [formGroup]="form" class="section form-section" (submit)="submit()" *ngIf="!shouldHideForm && !shouldShowGotcha">
+      <ng-container *ngFor="let guest of guestList; let i = index">
+        <div formGroupName="joining" class="col space-between joining-group select-test">
+          <h2 [ngClass]="{'name': i > 0}">{{ guest.first + ' ' + guest.last}}</h2>
+          <select [formControlName]="guest.first">
+            <option value="">Te joindras-tu à nous?</option>
+            <option *ngFor="let option of joiningOptions" [ngValue]="option.id">
+              {{ option.fr }}
+            </option>
+          </select>
+        </div>
+
+        <div formGroupName="restrictions" class="margin-16 restriction-input"  *ngIf="shouldDisplayFoodSection(guest.first)">
+          <input type="text" placeholder="Restrictions alimentaires" [formControlName]="guest.first">  
+        </div>
+      </ng-container>
+
+      <div class="divider"></div>
+
+      <button type="submit" class="submit-button" [disabled]="loading">
+        <ng-container *ngIf="!loading">Répondre</ng-container>
+        <ng-container *ngIf="loading"><img src="../assets/images/spinner.svg"></ng-container>
+      </button>
+      <span class="margin-16 error" *ngIf="errorMessage">{{errorMessage}}</span>
+
+    </form>
+
+    <div class="section completed-form" *ngIf="shouldHideForm || shouldShowGotcha">
+      <h3 *ngIf="shouldHideForm">
+        Merci d'avoir répondu au formulaire!
+      </h3>
+      <h3 *ngIf="shouldShowGotcha">
+        Gotcha!
+      </h3>
+    </div>
+
+    <div class="section photo photo-3"></div>
+
+    <div class="section info-sec">
+      <h1>
+        Foire aux questions
+      </h1>
+
+      <h2>
+        Transport
+      </h2>
+      <h3>
+        Pour les gens qui souhaitent venir en automobile, vous serez accueillis au stationnement P5 par un préposé au stationnement (gratuit). Celui-ci vous remettra un billet à déposer sur votre tableau de bord, puis vous guidera vers le lieu de la cérémonie. Vous avez jusqu'à 11h00 le lendemain pour aller chercher votre véhicule.
+      </h3>
+      <h3>
+        Une station de taxis / Uber 24h se trouve au Casino de Montréal, si vous souhaitez vous y rendre à pied et prendre un taxi à partir de cet endroit. Vous pouvez également faire appel à la compagnie de taxi de votre choix. 
+      </h3>
+      <h3>
+        N'hésitez pas à dire à votre chauffeur qu'il a le droit de rouler sur le circuit.
+      </h3>
+
+      <div class="divider"></div>
+
+      <h2>
+        Enfants
+      </h2>
+      <h3>
+        Bien que nous adorons vos enfants, nous avons opté pour une célébration entre adultes seulement. Cela dit, nous avons hâte de vous voir et de partager ce moment avec vous!
+      </h3>
+
+    </div>
+  
+    <div class="section photo photo-4"></div>
+
+  </div>
+</div>
+
+<router-outlet></router-outlet>
