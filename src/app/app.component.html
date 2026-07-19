@@ -9,7 +9,7 @@
       <div class="monogram">A<span>&amp;</span>R</div>
     </nav>
     <div class="hero-overlay">
-      <div class="hero-date">27.05.27</div>
+      <div class="hero-date">28.05.27</div>
       <h1 class="hero-names">AVA <span class="amp">&amp;</span> ROMAN</h1>
       <div class="hero-script">Montréal</div>
     </div>
@@ -19,37 +19,29 @@
   <section class="split split-photo-left">
     <div class="split-photo photo-1"></div>
     <div class="split-text">
+      <div class="script-accent-small">Welcome</div>
       <h2 class="serif-headline">
-        Joignez-vous à nous pour célébrer notre amour.
+        Welcome to Ava and Roman's wedding.
       </h2>
       <p class="body">
-        <ng-container *ngIf="guestList.length > 0">
-          Bonjour<ng-container *ngFor="let guest of guestList; let i = index">
-            {{ ' ' + guest.first }}<ng-container *ngIf="i + 1 < guestList.length - 1">,</ng-container><ng-container *ngIf="i + 1 === guestList.length - 1"> &amp;</ng-container>
-          </ng-container>.
-          C'est avec une immense joie que nous vous invitons à partager avec nous cette célébration de notre union le 27 mai 2027.
-        </ng-container>
-        <ng-container *ngIf="guestList.length === 0">
-          C'est avec une immense joie que nous vous invitons à partager avec nous cette célébration de notre union le 27 mai 2027.
-        </ng-container>
+        We are honored to invite you to join us for an unforgettable evening as we begin this next chapter together. Your presence means the world to us, and we cannot wait to celebrate surrounded by those we cherish most.
       </p>
-      <a href="#rsvp" class="pill-button">Répondre</a>
+      <a href="#rsvp" class="pill-button">RSVP</a>
     </div>
   </section>
 
-  <!-- LOCATION SPLIT -->
+  <!-- CELEBRATION SPLIT -->
   <section class="split split-photo-right">
     <div class="split-text">
+      <div class="script-accent-small">The Celebration</div>
       <h2 class="serif-headline">
-        Au cœur de
-        <span class="script-accent">Montréal</span>
+        Friday, May 28, 2027
       </h2>
       <p class="body">
-        Vous êtes attendus à 16h00, et la cérémonie débutera à 16h30, à
-        <a href="https://maps.app.goo.gl/eCte9Lsek3yyQZfy7" target="_blank" class="inline-link">La Toundra</a>,
-        au 1 Circuit Gilles Villeneuve, Montréal, QC.
+        <strong>Plaza Volare</strong><br>
+        Montréal, Québec
       </p>
-      <button class="pill-button" (click)="addToCalendar()">Ajouter au calendrier</button>
+      <button class="pill-button" (click)="addToCalendar()">Add to Calendar</button>
     </div>
     <div class="split-photo photo-2"></div>
   </section>
@@ -58,95 +50,401 @@
   <section class="schedule">
     <div class="schedule-inner">
       <h2 class="schedule-title">
-        Notre <span class="script-accent">Journée</span>
+        Our <span class="script-accent">Schedule</span>
       </h2>
-      <div class="schedule-cols">
+      <div class="schedule-cols schedule-cols-5">
         <div class="schedule-col">
-          <div class="schedule-time">16:00</div>
-          <div class="schedule-desc">Accueil des invités et cocktail à l'arrivée sur le circuit.</div>
+          <div class="schedule-time">3:00 PM</div>
+          <div class="schedule-desc">Arrival at the venue.</div>
         </div>
         <div class="schedule-col">
-          <div class="schedule-time">16:30</div>
-          <div class="schedule-desc">Cérémonie de mariage, suivie de photos et bouchées.</div>
+          <div class="schedule-time">3:30 PM</div>
+          <div class="schedule-desc">Ceremony.</div>
         </div>
         <div class="schedule-col">
-          <div class="schedule-time">19:00</div>
-          <div class="schedule-desc">Souper dégustation en 4 services avec accord mets et vins.</div>
+          <div class="schedule-time">5:00 PM</div>
+          <div class="schedule-desc">Cocktail hour.</div>
+        </div>
+        <div class="schedule-col">
+          <div class="schedule-time">6:00 PM</div>
+          <div class="schedule-desc">Reception.</div>
+        </div>
+        <div class="schedule-col">
+          <div class="schedule-time">12:00 AM</div>
+          <div class="schedule-desc">Midnight snack.</div>
         </div>
       </div>
-      <a href="#rsvp" class="pill-button pill-on-gold">RSVP</a>
     </div>
   </section>
 
   <!-- WIDE PHOTO BREAK (fountain kiss) -->
   <div class="wide-photo photo-3"></div>
 
-  <!-- INFO TRIPTYCH -->
+  <!-- DRESS CODE -->
   <section class="info-block">
-    <div class="info-item">
-      <div class="script-accent-small">Formule</div>
-      <h3 class="serif-sub">Un dîner en quatre services</h3>
-      <p class="body narrow">
-        Le souper sera servi tel un menu « dégustation », en 4 services, avec un accord mets et vins. Vous n'avez donc aucun choix de repas à fournir. Nous sommes toutefois en mesure d'accommoder les allergies et restrictions alimentaires au besoin, et nous vous invitons à le mentionner sur le formulaire ci-dessous.
-      </p>
+    <div class="script-accent-small">Dress Code</div>
+    <h2 class="serif-headline centered">Formal / Black-Tie Optional</h2>
+    <p class="body narrow centered">
+      We invite you to dress in refined evening attire. Think timeless silhouettes, elevated fabrics, and understated glamour.
+    </p>
+
+    <div class="two-col-lists">
+      <div class="col-list">
+        <h3 class="serif-sub">For the ladies</h3>
+        <p class="body">Floor-length gowns or sophisticated cocktail dresses, with high heels.</p>
+      </div>
+      <div class="col-list">
+        <h3 class="serif-sub">For the gentlemen</h3>
+        <p class="body">A classic suit and tie; black tie is optional.</p>
+      </div>
     </div>
 
     <div class="gold-divider"></div>
 
-    <div class="info-item">
-      <div class="script-accent-small">Code vestimentaire</div>
-      <h3 class="serif-sub">Tenue de soirée</h3>
-    </div>
+    <p class="body narrow centered">
+      <em>Colors to avoid</em>&#8202;: <strong>white and gold</strong>. If in doubt, feel free to contact us or a member of the bridal party.
+    </p>
+  </section>
+
+  <!-- WIDE PHOTO BREAK (reflecting pool) -->
+  <div class="wide-photo photo-6"></div>
+
+  <!-- TRAVEL -->
+  <section class="info-block travel-block">
+    <div class="script-accent-small">Travel</div>
+    <h2 class="serif-headline centered">For those joining from afar</h2>
+    <p class="body narrow centered">
+      We are so happy to have you with us. Here is some information for your travels.
+    </p>
 
     <div class="gold-divider"></div>
 
-    <div class="info-item">
-      <div class="script-accent-small">Cadeaux</div>
-      <h3 class="serif-sub">Votre présence est notre plus beau cadeau</h3>
-      <p class="body narrow">
-        Votre support et présence à notre mariage sont les plus beaux des cadeaux. Si vous tenez à nous offrir quelque chose de plus, une contribution monétaire serait chaleureusement appréciée&#8202;: vous pouvez l'envoyer par courriel à
-        <span class="inline-link">mariageavaroman&#64;gmail.com</span>. Une boîte pour les cartes sera également disponible le jour même.
-      </p>
+    <h3 class="serif-sub centered">Airport</h3>
+    <p class="body narrow centered">
+      Montréal–Trudeau International Airport (YUL) — approximately 10 minutes from the venue.
+    </p>
+
+    <h3 class="serif-sub centered top-space">Transportation</h3>
+    <p class="body narrow centered">
+      Taxis and rideshare services are readily available, offering seamless transport to and from your hotel and the celebration.
+    </p>
+
+    <h3 class="serif-sub centered top-space">Hotels</h3>
+    <p class="body narrow centered">
+      For your comfort, we recommend the following hotels located just minutes from the venue. We encourage early booking to ensure availability.
+    </p>
+
+    <div class="hotels-list">
+      <div class="hotel-item">
+        <div class="hotel-name">Armon Plaza Montreal Airport</div>
+        <div class="hotel-desc">Located at the venue for ultimate convenience. Mention the wedding at booking.</div>
+      </div>
+      <div class="hotel-item">
+        <div class="hotel-name">Crowne Plaza Montreal Airport</div>
+        <div class="hotel-desc">A refined stay within walking distance.</div>
+      </div>
+      <div class="hotel-item">
+        <div class="hotel-name">Hilton Garden Inn Montreal Airport</div>
+        <div class="hotel-desc">Modern comfort just a short drive away.</div>
+      </div>
+      <div class="hotel-item">
+        <div class="hotel-name">Novotel Montreal Aéroport</div>
+        <div class="hotel-desc">Contemporary and welcoming accommodations.</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WIDE PHOTO BREAK (carrying bride) -->
+  <div class="wide-photo photo-7"></div>
+
+  <!-- BRIDAL PARTY -->
+  <section class="party-section">
+    <div class="party-header">
+      <div class="script-accent-small">Bridal Party</div>
+      <h2 class="serif-headline centered">A quick introduction</h2>
+    </div>
+
+    <div class="party-subhead">
+      <div class="script-accent-small">Bridesmaids</div>
+    </div>
+
+    <div class="party-grid">
+      <article class="party-card">
+        <div class="party-photo" data-initials="AP"></div>
+        <h3 class="party-name">Amélie Provost</h3>
+        <div class="party-role">Maid of Honour</div>
+        <p class="body">
+          Ava and Amélie met at the beginning of high school through mutual friends. Over time, their friendship deepened as they bonded over music, shared interests, and, most of all, the challenges they faced, the values they hold, and their unwavering support for one another. Together, they embody the perfect duality — almost like the same person, thinking alike in so many ways, yet expressing themselves differently: complete opposites in personality, but perfectly balanced.
+        </p>
+      </article>
+
+      <article class="party-card">
+        <div class="party-photo" data-initials="AR"></div>
+        <h3 class="party-name">Ameikha Ramsagur</h3>
+        <div class="party-role">Officiant</div>
+        <p class="body">
+          Ameikha adopted Ava at the bus stop near their houses back in 8th grade, and from that moment on they became inseparable. Over the last 18 years, they have navigated life's highs and lows side by side, always finding their way back to each other no matter how much time has passed. They seem to share the same brain, and can pick up exactly where they left off at any moment. Their friendship is truly one of a kind — endless laughter, unwavering support, and a bond that only grows stronger. And now, Ameikha gets to marry Ava off.
+        </p>
+      </article>
+
+      <article class="party-card">
+        <div class="party-photo" data-initials="VD"></div>
+        <h3 class="party-name">Victoria Drego</h3>
+        <div class="party-role">Bridesmaid</div>
+        <p class="body">
+          High school English classes, "tea" breaks in CEGEP, surviving initiation week at McGill, and clocking in as coworkers at Costco and Dynamite — somewhere along the way, we became friends. Nights out at the now-closed Pioneer and Apt. 200, cozy movie marathons, evenings spent listening to country music and cottage weekends spent around the fire — we became best friends. Running through airport terminals and wrong train stations in France, being extras in unreleased reality TV shows (Netflix, we're still waiting!), chasing down famous DJs in Spain, discussing life's adventures by the Portuguese coastline — that friendship turned into sisterhood. And now on to the next adventure: getting Ava and Roman married. This is one journey that's guaranteed to stay on track.
+        </p>
+      </article>
+
+      <article class="party-card">
+        <div class="party-photo" data-initials="PM"></div>
+        <h3 class="party-name">Pauline Mayer</h3>
+        <div class="party-role">Bridesmaid</div>
+        <p class="body">
+          Ava has been my absolute rock for 22 years, starting the moment I walked right up to her at school when we were eight years old and asked if she wanted to be my friend. Thank goodness she said yes. Looking at those two little girls playing in the sand, it's incredible to think about how far we've come — and that I'm now getting to watch her walk down the aisle. Growing up side-by-side through every single milestone has been the greatest gift. As my oldest friend, she holds a massive piece of my heart, and I am so incredibly honored to stand by her side today. Here's to a lifetime of love and laughter, Ava.
+        </p>
+      </article>
+
+      <article class="party-card">
+        <div class="party-photo" data-initials="MV"></div>
+        <h3 class="party-name">Marisa Virginillo</h3>
+        <div class="party-role">Bridesmaid</div>
+        <p class="body">
+          Marisa met Ava through Ava's brother. Their friendship quickly grew far beyond "brother's girlfriend" status. In such a short time, Ava and Marisa built a friendship and sisterhood filled with laughter and full of fun. Marisa is Ava's new partner in crime in the family.
+        </p>
+      </article>
+
+      <article class="party-card">
+        <div class="party-photo" data-initials="SD"></div>
+        <h3 class="party-name">Sarina D'Angelo</h3>
+        <div class="party-role">Bridesmaid</div>
+        <p class="body">
+          Sarina first met Ava at a family dinner through her brother Roman, and it didn't take long for Ava to feel like part of the family. What began as a simple introduction quickly grew into a genuine and meaningful friendship, filled with laughter, unwavering support, and countless cherished memories.
+        </p>
+      </article>
+
+      <article class="party-card">
+        <div class="party-photo" data-initials="SC"></div>
+        <h3 class="party-name">Sarah Cosby</h3>
+        <div class="party-role">Bridesmaid</div>
+        <p class="body">
+          Sarah met Ava at John Abbott College, and they've been creating carefully planned and highly structured chaos together ever since. From trips to Cuba, Japan, Thailand, and Singapore, endless cottage weekends, belly-dancing classes, New Year's celebrations, and many concerts, to surviving Thailand taxi rides through water gun fights and obsessing over books, they've packed a lifetime of adventures and memories into their friendship. Ava is truly one of Sarah's favourite people to travel, celebrate, and strategically cause mayhem with.
+        </p>
+      </article>
+    </div>
+
+    <div class="party-subhead">
+      <div class="script-accent-small">Groomsmen</div>
+    </div>
+
+    <div class="party-grid">
+      <article class="party-card">
+        <div class="party-photo" data-initials="JT"></div>
+        <h3 class="party-name">Jesse Trepannier</h3>
+        <div class="party-role">Best Man</div>
+        <p class="body">
+          I met Roman in high school. As fate would have it we both missed an event, so we both got put into a classroom with all the people who didn't attend. We clicked like two peas in a pod, and our friendship has blossomed into what it is today. I couldn't ask for a better friend.
+        </p>
+      </article>
+
+      <article class="party-card">
+        <div class="party-photo" data-initials="KB"></div>
+        <h3 class="party-name">Kalvin Brazeau</h3>
+        <div class="party-role">Groomsman</div>
+        <p class="body">
+          Roman and I first met back in elementary school, but we didn't truly become close until after high school. As time went on, we started running into each other more and more at the gym. Before long, those quick talks turned into spending more time together, hanging out constantly, and creating some of my favorite memories. No matter what we were doing, being around Roman always felt easy and genuine. Over time, he became not only one of my best friends, but someone I could always count on. To this day, Roman remains one of the closest and most important people in my life.
+        </p>
+      </article>
+
+      <article class="party-card">
+        <div class="party-photo" data-initials="AS"></div>
+        <h3 class="party-name">Anthony Spadaccini</h3>
+        <div class="party-role">Groomsman</div>
+        <p class="body">
+          Roman and I met at the motocross track when we were 12. Our friendship went from only hanging out at the track to spending nearly every summer together. We've gone many places and had many laughs. 16 years later and I can still call him one of my greatest and closest friends. Love ya buddy.
+        </p>
+      </article>
+
+      <article class="party-card">
+        <div class="party-photo" data-initials="MD"></div>
+        <h3 class="party-name">Mario D'Angelo</h3>
+        <div class="party-role">Groomsman</div>
+        <p class="body">
+          Mario met Roman the day he was born — his younger brother arrived when Mario was 5 years old. Growing up, Roman was the king of the chirps, always keeping everyone on their toes, just as any younger brother would. With his sense of humour, he could always make people laugh, even if it meant being the joke himself sometimes. Over the years, Mario watched Roman grow into an incredibly driven and determined person, overcoming countless obstacles along the way. Today, Roman has become a great man and a loving godfather to Mario's daughter, and Mario is proud to call him his brother.
+        </p>
+      </article>
+
+      <article class="party-card">
+        <div class="party-photo" data-initials="FD"></div>
+        <h3 class="party-name">Franco D'Angelo Jr.</h3>
+        <div class="party-role">Groomsman</div>
+        <p class="body">
+          The first time we saw each other, I took my duty as a big brother to heart — accompanying you through life's many unique learning experiences. Whether it was your first taste of metal after swallowing a quarter, the existential crisis that followed, or the whimsical family movie night when you almost set the garage on fire with your plastic army men, those were truly one of a kind. Over time we grew closer and formed our own wolf pack with a shared, simple objective: make Mario's life a living hell. Between your cunning skills and your legendary over-application of Axe body spray, I always knew you were going somewhere.
+        </p>
+      </article>
+
+      <article class="party-card">
+        <div class="party-photo" data-initials="CL"></div>
+        <h3 class="party-name">Christopher Lee</h3>
+        <div class="party-role">Groomsman</div>
+        <p class="body">
+          Chris first met Roman in early 2013 through his sister, Sarina, and they quickly recognized a special brother-in-law connection. Their bond formed almost instantly, growing into a close friendship. Over the years, Roman became much more than family — standing proudly as a groomsman in Chris and Sarina's wedding and embracing his role as a caring, supportive uncle to his nephew, Theo. Whether it's mountain biking adventures or brewery tours, Chris and Roman have shown that brothers-in-law can become not just family, but truly great friends.
+        </p>
+      </article>
+
+      <article class="party-card">
+        <div class="party-photo" data-initials="AK"></div>
+        <h3 class="party-name">Aria Khaksar</h3>
+        <div class="party-role">Groomsman</div>
+        <p class="body">
+          When my sister told me her new boyfriend was a tall Italian guy with tattoos who worked in a car dealership and owned multiple properties, I was 100% sure he was in the mob. Instead, after the first time meeting him I quickly realized he couldn't be anything further than an Italian mobster — he was just one of the boys who plays video games, enjoys drinking almost as much as I do, and loves a good/bad round of golf. We bonded instantly and he became a brother to me quicker than I expected. And just for the record, he still owes me either an Italian leather belt from Rome… or a GR Corolla. I'm pretty flexible.
+        </p>
+      </article>
     </div>
   </section>
 
   <!-- WIDE PHOTO BREAK (corridor walk) -->
   <div class="wide-photo photo-4"></div>
 
+  <!-- SOFREH AGHD -->
+  <section class="info-block sofreh-block">
+    <div class="script-accent-small">The Sofreh Aghd</div>
+    <h2 class="serif-headline centered">A Persian tradition</h2>
+    <p class="body narrow centered">
+      A meaningful part of our ceremony is the <em>Sofreh Aghd</em>, a traditional Persian wedding spread rich in symbolism and beauty. Carefully arranged, it reflects wishes for a marriage filled with love, prosperity, and harmony. Each element placed upon it carries significance, honoring both heritage and the journey ahead.
+    </p>
+
+    <div class="gold-divider"></div>
+
+    <div class="script-accent-small centered-block">Symbolic Elements</div>
+
+    <div class="sofreh-grid">
+      <div class="sofreh-item">
+        <h4 class="sofreh-name">Mirror &amp; Candles <span class="sofreh-native">Aayeneh &middot; Shamdoon</span></h4>
+        <p class="body">Light, clarity, and the reflection of a shared future.</p>
+      </div>
+      <div class="sofreh-item">
+        <h4 class="sofreh-name">Honey <span class="sofreh-native">Asal</span></h4>
+        <p class="body">Sweetness — the couple shares honey to mark the beginning of a life filled with kindness and joy.</p>
+      </div>
+      <div class="sofreh-item">
+        <h4 class="sofreh-name">Bread, Cheese &amp; Herbs <span class="sofreh-native">Nan o Panir Sabzi</span></h4>
+        <p class="body">A blessing for prosperity, sustenance, and a life rich in simple pleasures.</p>
+      </div>
+      <div class="sofreh-item">
+        <h4 class="sofreh-name">Decorated Eggs <span class="sofreh-native">Tokhmeh Morgh</span></h4>
+        <p class="body">Fertility and new beginnings.</p>
+      </div>
+      <div class="sofreh-item">
+        <h4 class="sofreh-name">Nuts &amp; Sweets <span class="sofreh-native">Ajil</span></h4>
+        <p class="body">A symbol of abundance and a sweet life together.</p>
+      </div>
+      <div class="sofreh-item">
+        <h4 class="sofreh-name">Coins <span class="sofreh-native">Sekkeh</span></h4>
+        <p class="body">Signifying wealth and financial prosperity.</p>
+      </div>
+      <div class="sofreh-item">
+        <h4 class="sofreh-name">Sacred Text or Poetry Book</h4>
+        <p class="body">Often a volume of Persian poetry or a religious book — representing spirituality, wisdom, and guidance.</p>
+      </div>
+      <div class="sofreh-item">
+        <h4 class="sofreh-name">Sugar Cones <span class="sofreh-native">Kalleh Ghand</span></h4>
+        <p class="body">Gently ground above the couple during the ceremony, showering them in sweetness and blessings.</p>
+      </div>
+      <div class="sofreh-item">
+        <h4 class="sofreh-name">Rosewater <span class="sofreh-native">Golab</span></h4>
+        <p class="body">Purity and fragrance — a sense of calm and grace to the union.</p>
+      </div>
+    </div>
+
+    <p class="body narrow centered top-space">
+      This timeless tradition is a reflection of culture, intention, and love — woven into the very beginning of our marriage. We are honored to share it with you.
+    </p>
+  </section>
+
+  <!-- PERSIAN DANCE EXPERIENCE -->
+  <section class="info-block dance-block">
+    <div class="script-accent-small">Persian Dance Experience</div>
+    <h2 class="serif-headline centered">Learn Persian dance</h2>
+    <p class="body narrow centered">
+      To fully enjoy the celebration, we invite guests to take part in a special opportunity to learn the art of Persian dancing for beginners — an expressive and joyful part of the evening.
+    </p>
+
+    <div class="dance-details">
+      <div class="dance-detail">
+        <div class="dance-label">Date</div>
+        <div class="dance-value">April 10, 2027</div>
+      </div>
+      <div class="dance-detail">
+        <div class="dance-label">Location</div>
+        <div class="dance-value">6354 Beauséjour Dr, Orleans, ON, Canada</div>
+      </div>
+      <div class="dance-detail">
+        <div class="dance-label">Format</div>
+        <div class="dance-value">In-person and online</div>
+      </div>
+    </div>
+
+    <p class="body narrow centered top-space">
+      Details on how to join will be shared closer to the date. Let us know below whether you'd like to attend.
+    </p>
+  </section>
+
   <!-- RSVP FORM -->
   <section class="rsvp" id="rsvp">
     <div class="rsvp-inner">
-      <div class="script-accent-small">Répondez</div>
-      <h2 class="serif-headline centered">Veuillez confirmer votre présence</h2>
-      <p class="body centered">avant le 26 mars 2025</p>
+      <div class="script-accent-small">RSVP</div>
+      <h2 class="serif-headline centered">Kindly respond by September 30, 2026</h2>
+      <p class="body centered">We look forward to celebrating with you.</p>
 
       <form [formGroup]="form" class="rsvp-form" (submit)="submit()" *ngIf="!shouldHideForm && !shouldShowGotcha">
         <ng-container *ngFor="let guest of guestList; let i = index">
           <div formGroupName="joining" class="rsvp-row">
             <h3 class="rsvp-name">{{ guest.first + ' ' + guest.last }}</h3>
             <select [formControlName]="guest.first">
-              <option value="">Te joindras-tu à nous&#8202;?</option>
+              <option value="">Will you be joining us?</option>
               <option *ngFor="let option of joiningOptions" [ngValue]="option.id">
-                {{ option.fr }}
+                {{ option.en }}
+              </option>
+            </select>
+          </div>
+
+          <div formGroupName="meal" class="rsvp-row" *ngIf="shouldDisplayFoodSection(guest.first)">
+            <label class="rsvp-label">Meal choice</label>
+            <select [formControlName]="guest.first">
+              <option value="">Select a meal</option>
+              <option *ngFor="let option of mealOptions" [ngValue]="option.id">
+                {{ option.en }}
               </option>
             </select>
           </div>
 
           <div formGroupName="restrictions" class="rsvp-row" *ngIf="shouldDisplayFoodSection(guest.first)">
-            <input type="text" placeholder="Restrictions alimentaires" [formControlName]="guest.first">
+            <label class="rsvp-label">Dietary restrictions or allergies</label>
+            <input type="text" placeholder="e.g. no red meat, nut allergy" [formControlName]="guest.first">
+          </div>
+
+          <div formGroupName="danceClass" class="rsvp-row" *ngIf="shouldDisplayFoodSection(guest.first)">
+            <label class="rsvp-label">Persian dance class (Apr 10, 2027) — interested?</label>
+            <select [formControlName]="guest.first">
+              <option value="">Select an option</option>
+              <option *ngFor="let option of dancingOptions" [ngValue]="option.id">
+                {{ option.en }}
+              </option>
+            </select>
           </div>
         </ng-container>
 
         <button type="submit" class="pill-button submit-pill" [disabled]="loading">
-          <ng-container *ngIf="!loading">Envoyer</ng-container>
+          <ng-container *ngIf="!loading">Send</ng-container>
           <ng-container *ngIf="loading"><img src="../assets/images/spinner.svg"></ng-container>
         </button>
         <span class="rsvp-error" *ngIf="errorMessage">{{ errorMessage }}</span>
       </form>
 
       <div class="rsvp-complete" *ngIf="shouldHideForm || shouldShowGotcha">
-        <p class="body centered" *ngIf="shouldHideForm">Merci d'avoir répondu au formulaire.</p>
-        <p class="body centered" *ngIf="shouldShowGotcha">Gotcha&#8202;!</p>
+        <p class="body centered" *ngIf="shouldHideForm">Thank you for responding!</p>
+        <p class="body centered" *ngIf="shouldShowGotcha">Gotcha!</p>
       </div>
     </div>
   </section>
@@ -155,23 +453,39 @@
   <section class="split split-photo-left faq">
     <div class="split-photo photo-5"></div>
     <div class="split-text">
-      <div class="script-accent-small">Foire aux</div>
-      <h2 class="serif-headline">Questions</h2>
+      <div class="script-accent-small">FAQ</div>
+      <h2 class="serif-headline">Frequently asked</h2>
 
       <div class="faq-item">
-        <h3 class="serif-sub">Transport</h3>
+        <h3 class="serif-sub">Parking</h3>
+        <p class="body">Complimentary parking is available on-site.</p>
+      </div>
+
+      <div class="faq-item">
+        <h3 class="serif-sub">Plus Ones</h3>
         <p class="body">
-          Pour les gens qui souhaitent venir en automobile, vous serez accueillis au stationnement P5 par un préposé (gratuit), qui vous remettra un billet à déposer sur votre tableau de bord et vous guidera vers le lieu de la cérémonie. Vous avez jusqu'à 11h00 le lendemain pour aller chercher votre véhicule.
-        </p>
-        <p class="body">
-          Une station de taxis / Uber 24h se trouve au Casino de Montréal. N'hésitez pas à dire à votre chauffeur qu'il a le droit de rouler sur le circuit.
+          Due to space constraints, we can only accommodate those specifically listed on your invitation. We appreciate your understanding and can't wait to celebrate with our closest friends and family.
         </p>
       </div>
 
       <div class="faq-item">
-        <h3 class="serif-sub">Enfants</h3>
+        <h3 class="serif-sub">Children</h3>
         <p class="body">
-          Bien que nous adorons vos enfants, nous avons opté pour une célébration entre adultes seulement. Cela dit, nous avons hâte de vous voir et de partager ce moment avec vous.
+          While we adore your little ones, we have chosen to make this an adults-only evening. Thank you for understanding and for joining us for a night of celebration.
+        </p>
+      </div>
+
+      <div class="faq-item">
+        <h3 class="serif-sub">Unplugged Ceremony</h3>
+        <p class="body">
+          We invite you to be fully present with us. Kindly refrain from using phones or cameras during the ceremony.
+        </p>
+      </div>
+
+      <div class="faq-item">
+        <h3 class="serif-sub">Registry</h3>
+        <p class="body">
+          With your presence, we have all we could wish for. Should you wish to give us something more, we will have a wishing well at the reception.
         </p>
       </div>
     </div>
@@ -180,7 +494,7 @@
   <!-- FOOTER SIGN-OFF -->
   <footer class="footer">
     <div class="monogram footer-mono">A<span>&amp;</span>R</div>
-    <div class="footer-date">27.05.27 &middot; Montréal</div>
+    <div class="footer-date">28.05.27 &middot; Montréal</div>
   </footer>
 
 </div>

@@ -17,13 +17,32 @@ export class AppComponent implements OnInit, OnDestroy {
   title = 'wedding';
   joiningOptions = [
     {
-      fr: 'J\'ai hâte d\'y être',
+      en: "I'll be there",
       id: 'yes'
     },
     {
-      fr: 'Je ne pourrai pas y être',
+      en: "I won't be able to make it",
       id: 'no'
     }
+  ];
+
+  dancingOptions = [
+    {
+      en: "Interested in dance class",
+      id: 'yes'
+    },
+    {
+      en: "Not interested in dance class",
+      id: 'no'
+    }
+  ];
+
+  mealOptions = [
+    { en: 'Chicken',    id: 'chicken' },
+    { en: 'Beef',       id: 'beef' },
+    { en: 'Fish',       id: 'fish' },
+    { en: 'Vegetarian', id: 'vegetarian' },
+    { en: 'Vegan',      id: 'vegan' }
   ];
 
   guestList: { first: string; last: string; }[] = [];
@@ -35,7 +54,9 @@ export class AppComponent implements OnInit, OnDestroy {
 
   form: FormGroup = this.fb.group({
     joining: this.fb.group({}),
-    restrictions: this.fb.group({})
+    meal: this.fb.group({}),
+    restrictions: this.fb.group({}),
+    danceClass: this.fb.group({})
   });
 
   constructor(
@@ -62,7 +83,9 @@ export class AppComponent implements OnInit, OnDestroy {
 
           for (const guest of this.guestList) {
             (this.form.get('joining') as FormGroup).addControl(guest.first, new FormControl('', Validators.required));
+            (this.form.get('meal') as FormGroup).addControl(guest.first, new FormControl(''));
             (this.form.get('restrictions') as FormGroup).addControl(guest.first, new FormControl(''));
+            (this.form.get('danceClass') as FormGroup).addControl(guest.first, new FormControl(''));
           }
         }
       }
@@ -70,7 +93,7 @@ export class AppComponent implements OnInit, OnDestroy {
   }
 
   private namesExists() {
-    this.subscriptions.push(this.http.post<Exists>('https://us-central1-florencesimonwedding.cloudfunctions.net/namesExists', {
+    this.subscriptions.push(this.http.post<Exists>('https://us-central1-avaromanwedding.cloudfunctions.net/namesExists', {
       names: this.guestList
     }).subscribe((result: Exists) => {
       if (!result.exists) {
@@ -80,7 +103,7 @@ export class AppComponent implements OnInit, OnDestroy {
   }
 
   private async guestsExists() {
-    this.subscriptions.push(this.http.post<Exists>('https://us-central1-florencesimonwedding.cloudfunctions.net/guestsExists', {
+    this.subscriptions.push(this.http.post<Exists>('https://us-central1-avaromanwedding.cloudfunctions.net/guestsExists', {
       guests: this.guestList
     }).subscribe((result: Exists) => {
       if (result.exists) {
@@ -94,16 +117,16 @@ export class AppComponent implements OnInit, OnDestroy {
   }
 
   public addToCalendar() {
-    const start = new Date(2027, 5, 27)
-    const end = new Date(2027, 5, 28)
+    const start = new Date(2027, 5, 28)
+    const end = new Date(2027, 5, 29)
     const final_date = this.format_date(start) + "/" + this.format_date(end);
-    const name = "Mariage Ava et Roman";
-    const description = `Joignez-vous à nous pour notre mariage. %0A%0ALa cérémonie débute à 16:30 %0ALa Toundra https://maps.app.goo.gl/eCte9Lsek3yyQZfy7 %0A1 Circuit Gilles Villeneuve, Montreal, QC, Canada`;
-    const loc = '1 Circuit Gilles Villeneuve, Montréal, QC H3C 1A9';
+    const name = "Ava & Roman's Wedding";
+    const description = `Join us for our wedding. %0A%0ACeremony begins at 3:30 PM %0APlaza Volare, Montréal, Québec`;
+    const loc = 'Plaza Volare, Montréal, QC';
     const href = "https://www.google.com/calendar/render?action=TEMPLATE&text="+ name +"&dates="+ final_date +"&details="+ description +"&location="+ loc +"&sf=true&output=xml";
     window.open(href,'_blank');
   }
-  
+
   private zero_pad2(num: number) {
     if(num < 10) return "0" + num;
       return num;
@@ -113,16 +136,16 @@ export class AppComponent implements OnInit, OnDestroy {
     var day = date.getDate();
     var monthIndex = date.getMonth();
     var year = date.getFullYear();
-    
+
     let formatted_date;
     formatted_date = ("" + year) + this.zero_pad2(monthIndex) + this.zero_pad2(day);
-    
+
     return formatted_date;
   }
 
   public submit() {
     if (this.form.invalid) {
-      this.errorMessage = 'Veuillez compléter le formulaire';
+      this.errorMessage = 'Please complete the form';
       return;
     }
 
@@ -132,13 +155,15 @@ export class AppComponent implements OnInit, OnDestroy {
         first: guest.first,
         last: guest.last,
         joining: (this.form.get(`joining.${guest.first}`) as FormControl).value,
-        restriction: (this.form.get(`restrictions.${guest.first}`) as FormControl).value
+        meal: (this.form.get(`meal.${guest.first}`) as FormControl).value,
+        restriction: (this.form.get(`restrictions.${guest.first}`) as FormControl).value,
+        danceClass: (this.form.get(`danceClass.${guest.first}`) as FormControl).value
       });
     }
 
     try {
       this.loading = true;
-      this.subscriptions.push(this.http.post('https://us-central1-florencesimonwedding.cloudfunctions.net/addGuests', {
+      this.subscriptions.push(this.http.post('https://us-central1-avaromanwedding.cloudfunctions.net/addGuests', {
         guests: result
       }).subscribe(() => {
         localStorage.setItem('shouldHideForm', 'true');
