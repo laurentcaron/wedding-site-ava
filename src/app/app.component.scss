@@ -299,7 +299,6 @@ $script: 'Allura', cursive;
 .photo-4 { background-image: url(../assets/images/Photo_site_AR_5.jpg); } // corridor walk (wide break before RSVP)
 .photo-5 { background-image: url(../assets/images/Photo_site_AR_6.jpg); } // sitting on wall (FAQ split)
 .photo-6 { background-image: url(../assets/images/Photo_site_AR_7.jpg); } // reflecting pool (wide break, Dress Code → Travel)
-.photo-7 { background-image: url(../assets/images/Photo_site_AR_8.jpg); } // carrying bride (wide break, Travel → Bridal Party)
 
 // ---------- SCHEDULE ----------
 
@@ -604,120 +603,6 @@ $script: 'Allura', cursive;
     color: rgba($ink, 0.75);
 }
 
-// ---------- BRIDAL PARTY ----------
-
-.party-section {
-    max-width: 1180px;
-    margin: 0 auto;
-    padding: 140px 32px;
-
-    @media (max-width: 780px) {
-        padding: 100px 24px;
-    }
-}
-
-.party-header {
-    text-align: center;
-    margin-bottom: 60px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.party-subhead {
-    text-align: center;
-    margin: 60px 0 32px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-
-    .script-accent-small {
-        font-size: clamp(36px, 3.4vw, 52px);
-    }
-}
-
-.party-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 40px 32px;
-
-    @media (max-width: 960px) {
-        grid-template-columns: repeat(2, 1fr);
-    }
-
-    @media (max-width: 600px) {
-        grid-template-columns: 1fr;
-    }
-}
-
-.party-card {
-    padding: 0 0 32px;
-    background: $white;
-    border: 1px solid rgba($gold, 0.3);
-    border-radius: 4px;
-    display: flex;
-    flex-direction: column;
-    overflow: hidden;
-
-    .party-name,
-    .party-role,
-    .body {
-        padding-left: 28px;
-        padding-right: 28px;
-    }
-
-    .body {
-        font-size: 17px;
-        margin-bottom: 0;
-    }
-}
-
-.party-photo {
-    aspect-ratio: 4 / 5;
-    width: 100%;
-    margin-bottom: 24px;
-    background: linear-gradient(135deg, rgba($gold, 0.55) 0%, rgba($gold, 0.25) 100%);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: relative;
-    overflow: hidden;
-
-    &::before {
-        content: attr(data-initials);
-        font-family: $script;
-        font-size: clamp(56px, 5vw, 88px);
-        color: rgba($white, 0.92);
-        line-height: 1;
-        letter-spacing: 0.02em;
-        text-shadow: 0 2px 12px rgba(0, 0, 0, 0.15);
-    }
-
-    &::after {
-        content: '';
-        position: absolute;
-        inset: 12px;
-        border: 1px solid rgba($white, 0.35);
-        pointer-events: none;
-    }
-}
-
-.party-name {
-    font-family: $serif;
-    font-weight: 500;
-    font-size: 22px;
-    color: $ink;
-    margin: 0 0 4px;
-    letter-spacing: 0.01em;
-}
-
-.party-role {
-    font-family: $script;
-    color: $gold;
-    font-size: 26px;
-    line-height: 1;
-    margin-bottom: 16px;
-}
 
 // ---------- SOFREH AGHD ----------
 
