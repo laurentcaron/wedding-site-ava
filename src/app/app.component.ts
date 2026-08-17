@@ -38,11 +38,9 @@ export class AppComponent implements OnInit, OnDestroy {
   ];
 
   mealOptions = [
-    { en: 'Chicken',    id: 'chicken' },
-    { en: 'Beef',       id: 'beef' },
-    { en: 'Fish',       id: 'fish' },
-    { en: 'Vegetarian', id: 'vegetarian' },
-    { en: 'Vegan',      id: 'vegan' }
+    { en: 'Braised beef short rib', id: 'short-rib' },
+    { en: 'Salmon',                 id: 'salmon' },
+    { en: 'Vegan',                  id: 'vegan' }
   ];
 
   guestList: { first: string; last: string; }[] = [];
@@ -56,7 +54,8 @@ export class AppComponent implements OnInit, OnDestroy {
     joining: this.fb.group({}),
     meal: this.fb.group({}),
     restrictions: this.fb.group({}),
-    danceClass: this.fb.group({})
+    danceClass: this.fb.group({}),
+    songRequest: this.fb.group({})
   });
 
   constructor(
@@ -86,6 +85,7 @@ export class AppComponent implements OnInit, OnDestroy {
             (this.form.get('meal') as FormGroup).addControl(guest.first, new FormControl(''));
             (this.form.get('restrictions') as FormGroup).addControl(guest.first, new FormControl(''));
             (this.form.get('danceClass') as FormGroup).addControl(guest.first, new FormControl(''));
+            (this.form.get('songRequest') as FormGroup).addControl(guest.first, new FormControl(''));
           }
         }
       }
@@ -110,6 +110,11 @@ export class AppComponent implements OnInit, OnDestroy {
         this.shouldHideForm = true;
       }
     }));
+  }
+
+  public scrollToRsvp(event?: Event) {
+    if (event) { event.preventDefault(); }
+    document.getElementById('rsvp')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
   }
 
   public shouldDisplayFoodSection(guest: string) {
@@ -157,7 +162,8 @@ export class AppComponent implements OnInit, OnDestroy {
         joining: (this.form.get(`joining.${guest.first}`) as FormControl).value,
         meal: (this.form.get(`meal.${guest.first}`) as FormControl).value,
         restriction: (this.form.get(`restrictions.${guest.first}`) as FormControl).value,
-        danceClass: (this.form.get(`danceClass.${guest.first}`) as FormControl).value
+        danceClass: (this.form.get(`danceClass.${guest.first}`) as FormControl).value,
+        songRequest: (this.form.get(`songRequest.${guest.first}`) as FormControl).value
       });
     }
 

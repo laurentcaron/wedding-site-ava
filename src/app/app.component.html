@@ -11,7 +11,6 @@
     <div class="hero-overlay">
       <div class="hero-date">28.05.27</div>
       <h1 class="hero-names">AVA <span class="amp">&amp;</span> ROMAN</h1>
-      <div class="hero-script">Montréal</div>
     </div>
   </section>
 
@@ -26,7 +25,7 @@
       <p class="body">
         We are honored to invite you to join us for an unforgettable evening as we begin this next chapter together. Your presence means the world to us, and we cannot wait to celebrate surrounded by those we cherish most.
       </p>
-      <a href="#rsvp" class="pill-button">RSVP</a>
+      <a href="#rsvp" class="pill-button" (click)="scrollToRsvp($event)">RSVP</a>
     </div>
   </section>
 
@@ -245,7 +244,7 @@
   <section class="rsvp" id="rsvp">
     <div class="rsvp-inner">
       <div class="script-accent-small">RSVP</div>
-      <h2 class="serif-headline centered">Kindly respond by September 30, 2026</h2>
+      <h2 class="serif-headline centered">Kindly respond by December 15, 2026</h2>
       <p class="body centered">We look forward to celebrating with you.</p>
 
       <form [formGroup]="form" class="rsvp-form" (submit)="submit()" *ngIf="!shouldHideForm && !shouldShowGotcha">
@@ -283,6 +282,11 @@
                 {{ option.en }}
               </option>
             </select>
+          </div>
+
+          <div formGroupName="songRequest" class="rsvp-row" *ngIf="shouldDisplayFoodSection(guest.first)">
+            <label class="rsvp-label">Song you'd love to dance to <span class="rsvp-optional">(optional)</span></label>
+            <input type="text" placeholder="Artist — Title" [formControlName]="guest.first">
           </div>
         </ng-container>
 

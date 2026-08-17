@@ -197,9 +197,8 @@ $script: 'Allura', cursive;
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
     text-align: center;
-    padding: 0 24px;
+    padding: 200px 24px 0;
 }
 
 .hero-date {
@@ -293,12 +292,22 @@ $script: 'Allura', cursive;
 }
 
 // specific photo assignments
-.photo-1 { background-image: url(../assets/images/Photo_site_AR_2.jpg); } // close-up (intro split)
-.photo-2 { background-image: url(../assets/images/Photo_site_AR_3.jpg); } // staircase (location split)
-.photo-3 { background-image: url(../assets/images/Photo_site_AR_4.jpg); } // fountain kiss (wide break after schedule)
-.photo-4 { background-image: url(../assets/images/Photo_site_AR_9.jpg); } // corridor walk (wide break)
-.photo-5 { background-image: url(../assets/images/Photo_site_AR_6.jpg); } // girl holding skirt / sitting on wall (FAQ split)
-.photo-6 { background-image: url(../assets/images/Photo_site_AR_7.jpg); } // reflecting pool (wide break, Dress Code → Travel)
+// Compound selectors (.split-photo.photo-N / .wide-photo.photo-N) so per-photo overrides
+// always beat the shared .split-photo / .wide-photo base rules regardless of file order.
+.split-photo.photo-1 {
+    background-image: url(../assets/images/Photo_site_AR_2.jpg); // close-up (intro split)
+    margin-top: 200px;
+    align-self: start;
+}
+.split-photo.photo-2 { background-image: url(../assets/images/Photo_site_AR_3.jpg); } // staircase (location split)
+.wide-photo.photo-3  { background-image: url(../assets/images/Photo_site_AR_4.jpg); } // fountain kiss (wide break after schedule)
+.wide-photo.photo-4  { background-image: url(../assets/images/Photo_site_AR_9.jpg); } // corridor walk (wide break)
+.split-photo.photo-5 { background-image: url(../assets/images/Photo_site_AR_6.jpg); } // girl holding skirt / sitting on wall (FAQ split)
+.wide-photo.photo-6 {
+    background-image: url(../assets/images/Photo_site_AR_7.jpg); // reflecting pool (Dress Code → Travel)
+    height: 55vh;
+    background-position: center 100%;
+}
 
 // ---------- SCHEDULE ----------
 
@@ -520,6 +529,14 @@ $script: 'Allura', cursive;
     letter-spacing: 0.05em;
     color: rgba($ink, 0.7);
     text-transform: uppercase;
+}
+
+.rsvp-optional {
+    color: rgba($ink, 0.45);
+    font-style: italic;
+    text-transform: none;
+    letter-spacing: 0;
+    margin-left: 4px;
 }
 
 // ---------- utilities ----------

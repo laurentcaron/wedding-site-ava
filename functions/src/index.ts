@@ -20,7 +20,10 @@ interface Guest {
   last: string;
   joining?: string;
   restriction?: string;
+  meal?: string;
   exist?: boolean;
+  danceClass?: string;
+  songRequest?: string;
 }
 
 export const addGuests = functions.https.onRequest(async (request, response) => {
@@ -40,6 +43,9 @@ export const addGuests = functions.https.onRequest(async (request, response) => 
       await database.ref(`guests/${guest.first}_${guest.last}`).set({
         joining: guest.joining,
         restriction: guest.restriction,
+        meal: guest.meal,
+        danceClass: guest.danceClass,
+        songRequest: guest.songRequest
       });
     }
 
